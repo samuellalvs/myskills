@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     View,
     Text,
@@ -6,10 +6,20 @@ import {
     SafeAreaView,
     TextInput,
     Platform,
-    TouchableOpacity
 } from 'react-native'
 
+import { Button } from '../components/Button';
+import { SkillCard } from '../components/SkillCard';
+
 export function Home() {
+    const [newSkill, setNewSkill] = useState();
+    const [mySkills, setMySkills] = useState([]);
+
+
+    function handleAddNewSkill() {
+        setMySkills(oldState => [...oldState, newSkill]);
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.title}>
@@ -20,27 +30,27 @@ export function Home() {
                 style={styles.input}
                 placeholder="New skill"
                 placeholderTextColor="#555"
+                onChangeText={setNewSkill}
             />
 
-            <TouchableOpacity
-                style={styles.button}
-                activeOpacity={0.7}
-            >
-                <Text style={styles.buttonText}>
-                    Add
-                </Text>
-            </TouchableOpacity>
+            <Button onPress={handleAddNewSkill} />
 
             <Text
                 style={[
                     styles.title,
                     {
-                        marginTop: 50
+                        marginVertical: 50
                     }
                 ]}
             >
                 My Skills
             </Text>
+
+            {
+                mySkills.map(skill => (
+                    <SkillCard skill={skill} />
+                ))
+            }
         </SafeAreaView>
     )
 }
@@ -65,17 +75,5 @@ const styles = StyleSheet.create({
         marginTop: 30,
         borderRadius: 7,
 
-    },
-    button: {
-        backgroundColor: '#A370f7',
-        padding: 15,
-        borderRadius: 7,
-        alignItems: 'center',
-        marginTop: 20
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 17,
-        fontWeight: 'bold'
     }
 });
