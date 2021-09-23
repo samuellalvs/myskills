@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/samuellalvs/myskills?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/samuellalvs/myskills?style=for-the-badge)
 
-<center><img style="margin-bottom: 20px;" src="https://raw.githubusercontent.com/samuellalvs/myskills/main/images/home_screenshot.png" alt="Tela principal da aplicação"></center>
+<p align="center"><img style="margin-bottom: 20px;" src="https://raw.githubusercontent.com/samuellalvs/myskills/main/images/home_screenshot.png" alt="Tela principal da aplicação"><p align="center">
 
 
 MySkills é o primeiro projeto desenvolvido no ignite da RocketSeat, ele consistem em uma aplicação para o cadastro de habilidades do usuário.
